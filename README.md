@@ -1,6 +1,6 @@
 # Aprender html, css y javaScript</h1>
 
-[vista trabajos](https://danielrs59.github.io/blob/main/index.html)
+[vista trabajos](https://github.com/danielrs59/danielrs59.github.io/blob/main/index.html)
 
 
 <ol>
