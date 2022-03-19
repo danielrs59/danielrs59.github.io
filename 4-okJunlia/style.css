@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(img/junju.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15vh;
+    overflow: hidden;
+    margin: 0px;
+
+}
+
+.busqueda {
+    position: relative;
+    height: 50px;
+}
+
+.busqueda .input {
+    background-color: azure;
+    border: 0;
+    font-size: 18px;
+    padding: 15px;
+    height: 50px;
+    width: 55px;
+    transition: width 0.3s ease;
+}
+
+.button {
+    background-color: azure;
+    border: 0;
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 55px;
+    transition: width 0.3s ease;
+}
+
+.button:focus,
+.input:focus {
+    outline: none;
+}
+
+.busqueda.activo .input {
+    width: 200px;
+}
+
+.busqueda.activo .button {
+    transform: translateX(200px);
+}

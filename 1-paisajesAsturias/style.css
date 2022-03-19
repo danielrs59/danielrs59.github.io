@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex; /*ajusta a lo que ocupa*/
+    align-items: center; /*en el centro lo de dentro del contenido*/
+    justify-content: center; /*pone en el centro del body*/
+    height: 100vh; /*declara alto */
+    overflow: hidden; /*?¿lo expande un poco*/
+    margin: 0; /*quita margen*/
+}
+
+.contenedor {
+    display: flex; /*los pone uno al lado de otro*/
+    width: 90vw; /*declara ancho*/
+}
+
+.vista {
+    background-size: cover; /*el fondo entra en el tamaño del contenedor*/
+    background-position: center; /*posiciona en el cento*/
+    background-repeat: no-repeat; /*no repita fondo*/
+    height: 80vh; /*declara alto*/
+    border-radius: 50px; /*redondea bordes*/
+    color: white; /*color letra*/
+    cursor: grabbing; /*cursor mano cerrada*/
+    flex: 0.5; /*?¿ancho todos igual*/
+    margin: 10px; /*separacion entre elementos*/
+    position: relative;/*?¿se puede mover?¿*/
+    transition: all 700ms ease-in; /*hace una entrada de izq a derecha*/
+}
+
+.vista p {
+    font-size: 24px;
+    position: absolute; /*¿?NO se mueve nunca de sitio*/
+    bottom: 20px; /*distancia respecto el bottom | sale abajo*/
+    left: 20px; /*desplaza a la izq*/
+    margin: 0;
+    opacity: 0; /*transparente*/
+}
+
+.vista.activa {
+    flex: 5; /*declara ancho distinto*/
+}
+
+.vista.activa p {
+    opacity: 1; /*muestra*/
+    transition: none 0.3s ease-in 0.4s; /*efecto con las letras*/
+}
+
+.vista.activa.sueve {
+    background-image: url('img/sueve.jpeg');
+}
+.vista.botanico {
+    background-image: url('img/botanico.jpg');
+}
+.vista.isla {
+    background-image: url('img/isla.jpg');
+}
+.vista.lue {
+    background-image: url('img/lue.jpg');
+}
+.vista.pista {
+    background-image: url('img/pista.jpg');
+}
+
+/* @media (max-width: 480px) {
+    .contenedor {
+      width: 100vw;
+    }
+
+    .vista:nth-of-type(4),
+    .vista:nth-of-type(5) {
+      display: none;
+    }
+  } */
