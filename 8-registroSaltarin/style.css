@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(img/calaPiña.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: whitesmoke;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+img {
+    padding-top: 20px;
+    opacity: 0.8;
+    position: absolute;
+}
+.contenedor {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px 40px;
+    border-radius: 30px;
+}
+
+.contenedor a {
+    text-decoration: none;
+    color: azure;
+}
+
+.boton {
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    background: azure;
+    padding: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    border: 0;
+    border-radius: 5px;
+}
+
+.boton:focus {
+    outline: 0;
+}
+
+.boton:active {
+    transform: scale(.98);
+}
+
+.texto {
+    margin-top: 30px;
+}
+
+.formulario {
+    position: relative;
+    margin: 20px 0 40px;
+    width: 300px;
+}
+
+.formulario input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px azure solid;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+    color: azure;
+}
+
+.formulario input:focus,
+.formulario input:valid {
+  outline: 0;
+  border-bottom-color: lightblue;
+}
+
+.formulario label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    pointer-events: none;
+}
+/* esto lo hace con la condición JS */
+.formulario label span {
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.formulario input:focus + label span,
+.formulario input:valid + label span {
+  color: lightblue;
+  transform: translateY(-30px);
+}
