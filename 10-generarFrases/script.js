@@ -1,36 +1,37 @@
-// https://triunfagram.com/frases-para-instagram/
+const jokeEl = document.getElementById('frase')
+const jokeBtn = document.getElementById('fraseBoton')
 
-const fraseEl = document.getElementById('frase');
-const fraseBoton = document.getElementById('fraseBoton');
+jokeBtn.addEventListener('click', generateJoke)
 
-fraseBoton.addEventListener('click', generaFrase);
+generateJoke()
 
-generaFrase();
+// USING ASYNC/AWAIT
+async function generateJoke() {
+  const config = {
+    headers: {
+      Accept: 'application/json',
+    },
+  }
 
-// async function generaFrase() {
-//     const config = {
-//         headers: {
-//             Accept: 'application/json',
-//         },
-//     }
+  const res = await fetch('https://icanhazdadjoke.com', config)
 
-//     const res = await fetch('https://icanhazdadjoke.com', config);
+  const data = await res.json()
 
-//     const data = await res.json();
+  jokeEl.innerHTML = data.joke
+}
 
-//     fraseEl.innerHTML = data.frase
+// USING .then()
+// function generateJoke() {
+//   const config = {
+//     headers: {
+//       Accept: 'application/json',
+//     },
+//   }
+
+//   fetch('https://icanhazdadjoke.com', config)
+//     .then((res) => res.json())
+//     .then((data) => {
+//       jokeEl.innerHTML = data.joke
+//     })
 // }
 
- //USING .then()
- function generaFrase() {
-   const config = {
-     headers: {
-       Accept: 'application/json',
-     },
-    }
-   fetch('https://icanhazdadjoke.com', config)
-     .then((res) => res.json())
-     .then((data) => {
-       fraseEl.innerHTML = data.frase
-     })
- }
