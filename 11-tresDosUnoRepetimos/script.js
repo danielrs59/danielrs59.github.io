@@ -1,40 +1,40 @@
-const numero = document.querySelectorAll('.numero span');
-const contenedor = document.querySelector('.contenedor');
-const mensajeFinal = document.querySelector('.final');
-const repetir = document.querySelector('#repetir');
+const nums = document.querySelectorAll('.nums span')
+const counter = document.querySelector('.counter')
+const finalMessage = document.querySelector('.final')
+const replay = document.querySelector('#replay')
 
-comienzaAnimamacion();
+runAnimation()
 
-function resetearDOM() {
-    contenedor.classList.remove('hide');
-    mensajeFinal.classList.remove('show');
+function resetDOM() {
+  counter.classList.remove('hide')
+  finalMessage.classList.remove('show')
 
-    numero.forEach((num) => {
-        num.classList.value = '';
-    })
+  nums.forEach((num) => {
+    num.classList.value = ''
+  })
 
-    numero[0].classList.add('en');
+  nums[0].classList.add('in')
 }
 
-function comienzaAnimamacion() {
-    numero.forEach((num, idx) => {
-        const cuentaAtras = numero.length -1;
+function runAnimation() {
+  nums.forEach((num, idx) => {
+    const nextToLast = nums.length - 1
 
-        num.addEventListener('animationend', (e) => {
-            if (e.animationName === 'goIn' && idx !== cuentaAtras) {
-                num.classList.remove('in');
-                num.classList.add('out');
-            } else if (e.animationName === 'goOut' && num.nextElementSibling) {
-                num.nextElementSibling.classList.add('en');
-            } else {
-                contenedor.classList.add('hide');
-                mensajeFinal.classList.add('show')
-            }
-        })
+    num.addEventListener('animationend', (e) => {
+      if (e.animationName === 'goIn' && idx !== nextToLast) {
+        num.classList.remove('in')
+        num.classList.add('out')
+      } else if (e.animationName === 'goOut' && num.nextElementSibling) {
+        num.nextElementSibling.classList.add('in')
+      } else {
+        counter.classList.add('hide')
+        finalMessage.classList.add('show')
+      }
     })
+  })
 }
 
-repetir.addEventListener('click', () => {
-    resetearDOM();
-    comienzaAnimamacion();
+replay.addEventListener('click', () => {
+  resetDOM()
+  runAnimation()
 })
